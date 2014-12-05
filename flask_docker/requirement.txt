@@ -20,6 +20,7 @@ itsdangerous==0.23
 six==1.4.1
 pymysql
 flask-restful
-ForgeryPy==0.1
+lxml
 ipython
+forgerypy
 gunicorn
