@@ -31,7 +31,7 @@ EXPOSE 443
 
 #usage
 
-#docker run -d --name nginx -p 80:80 192.158.12.84/nginx
+#docker run -d --name nginx -p 80:80 192.168.12.84/nginx
 
 #Attach persistent/shared directories
 #docker run -d -p 80:80 -v <sites-enabled-dir>:/etc/nginx/sites-enabled -v <certs-dir>:/etc/nginx/certs -v <log-dir>:/var/log/nginx dockerfile/nginx

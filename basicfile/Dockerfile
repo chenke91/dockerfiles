@@ -6,23 +6,26 @@
 #基于哪个镜像
 FROM 192.168.12.84/ubuntu:14.04
 
+ADD sources.list /etc/apt/sources.list
+
+#sed -i "s/http:\/\/archive/http:\/\/cn.archive/g" /etc/apt/sources.list && \
 # install
 # 运行命令
 RUN \
-    sed -i "s/http:\/\/archive/http:\/\/cn.archive/g" /etc/apt/sources.list && \
     apt-get update && \
     apt-get -y upgrade && \
     apt-get install -y build-essential && \
     apt-get install -y software-properties-common && \
     apt-get install -y byobu curl git htop man unzip vim wget && \
-    rm -rf /var/lob/apt/lists/*
+    rm -rf /var/lib/apt/lists/*
 
 #MAINTAINER  镜像创建者
 
 # Add files.
 ADD root/.bashrc /root/.bashrc
-ADD root/.gitconfig /root/.gitconfig
-ADD root/.scripts /root/.scripts
+#ADD root/.gitconfig /root/.gitconfig
+#ADD root/.scripts /root/.scripts
+
 
 # Set environment variables.
 ENV HOME /root

@@ -27,4 +27,4 @@ EXPOSE 443
 
 ###usage
 
-##  docker run  --name nginx-guaranty --volumes-from webdata --link gunicorn:app -p 80:80 -d 192.168.12.84/nginx-guaranty
+##  docker run  --name nginx-guaranty --volumes-from webdata --link gunicorn:app -p 80:80 -d 192.168.12.84/nginx-guaranty bash ./run.sh

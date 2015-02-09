@@ -10,7 +10,16 @@ ADD requirement.txt /data/requirement.txt
 
 
 # Install flask
-RUN pip3 install -r /data/requirement.txt
+RUN pip3 install -r /data/requirement.txt && \
+    rm /data/requirement.txt
+
+#install flask-uploads
+RUN git clone https://github.com/chenke91/flask-uploads && \
+    cd flask-uploads && \
+    python3 ./setup.py build && \
+    python3 ./setup.py install && \
+    cd .. && \
+    rm -rf ./flask-uploads
 
 VOLUME ['/data']
 
