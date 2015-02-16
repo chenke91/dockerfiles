@@ -4,7 +4,7 @@
 
 # Pull base image
 #基于哪个镜像
-FROM 192.168.12.84/ubuntu:14.04
+FROM ubuntu:14.04
 
 ADD sources.list /etc/apt/sources.list
 
@@ -12,8 +12,9 @@ ADD sources.list /etc/apt/sources.list
 # install
 # 运行命令
 RUN \
-    apt-get update && \
-    apt-get -y upgrade && \
+    apt-get update
+#    apt-get -y upgrade && \
+RUN \
     apt-get install -y build-essential && \
     apt-get install -y software-properties-common && \
     apt-get install -y byobu curl git htop man unzip vim wget && \
